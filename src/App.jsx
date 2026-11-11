@@ -19,39 +19,85 @@ function App () {
 
   return (
     <>
-    <SkullBackground>
-      <div className='flex text-center h-screen items-center justify-center'>
-        <Rating onRatingSaved={handleRatingSaved} />
-        {/* <RatingStatistics refreshKey={refreshKey} /> */}
+      <SkullBackground>
+        <div className='flex text-center min-h-screen items-center justify-center'>
+          <Rating onRatingSaved={handleRatingSaved} />
 
-        <button
-          onClick={() => setShowStatistics(true)}
-          className='absolute top-5 right-5 z-20 p-2 text-white hover:bg-white/10 rounded-lg transition'
-          aria-label='Abrir estadísticas'
-        >
-          <Menu />
-        </button>
+          {/* Botón para abrir estadísticas */}
+          <button
+            onClick={() => setShowStatistics(true)}
+            className='
+        absolute top-5 right-5
+        z-20 p-2
+        text-white
+        hover:bg-white/10
+        rounded-lg
+        transition
+      '
+            aria-label='Abrir estadísticas'
+          >
+            <Menu />
+          </button>
 
-        {showStatistics && (
-          <div className='fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4'>
-            <div className='relative rounded-2xl bg-white shadow-2xl'>
-              {/* Botón cerrar */}
-              <button
-                onClick={() => setShowStatistics(false)}
-                className='absolute right-4 top-4 text-gray-500 hover:text-gray-900 text-2xl'
-                aria-label='Cerrar estadísticas'
+          {/* Modal de estadísticas */}
+          {showStatistics && (
+            <div
+              className='
+          fixed inset-0
+          z-50
+          flex items-center justify-center
+          bg-black/60
+          p-2 sm:p-4
+        '
+            >
+              <div
+                className='
+            relative
+            w-full max-w-xl
+            max-h-[90dvh]
+            overflow-y-auto
+            overscroll-contain
+            rounded-2xl
+            bg-white
+            shadow-2xl
+          '
               >
-                <X />
-              </button>
+                {/* Encabezado del modal */}
+                <div
+                  className='
+              sticky top-0
+              z-10
+              flex justify-end
+              bg-white
+              px-4 pt-3
+              rounded-t-2xl
+            '
+                >
+                  <button
+                    onClick={() => setShowStatistics(false)}
+                    className='
+                flex items-center justify-center
+                w-8 h-8
+                rounded-full
+                text-gray-500
+                hover:bg-gray-100
+                hover:text-gray-900
+                transition
+              '
+                    aria-label='Cerrar estadísticas'
+                  >
+                    <X size={22} />
+                  </button>
+                </div>
 
-              {/* Estadísticas */}
-              <div className='mt-6'>
-                <RatingStatistics refreshKey={refreshKey} />
+                {/* Estadísticas */}
+                <div className='px-3 pb-3 sm:px-6 sm:pb-6'>
+                  <RatingStatistics refreshKey={refreshKey} />
+                </div>
               </div>
             </div>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
       </SkullBackground>
     </>
   )

@@ -7,6 +7,7 @@ import pan2Img from '../assets/imgs/pan-2.webp'
 import pan3Img from '../assets/imgs/pan-3.webp'
 import pan4Img from '../assets/imgs/pan-4.webp'
 import pan5Img from '../assets/imgs/pan-5.webp'
+import Bar from './Bar'
 
 function Rating ({ onRatingSaved }) {
   const [loading, setLoading] = useState(false)
@@ -160,7 +161,11 @@ function Rating ({ onRatingSaved }) {
                 />
               </button>
             ))}
+
+            
           </div>
+
+          <Bar/>
         </div>
       )}
 
