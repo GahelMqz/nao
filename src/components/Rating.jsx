@@ -110,7 +110,8 @@ function Rating ({ onRatingSaved }) {
   sm:text-3xl
   md:text-5xl
   lg:text-6xl
-  mb-4
+  mt-2
+  mb-8
   text-center
   text-balance
   px-3
@@ -140,16 +141,10 @@ function Rating ({ onRatingSaved }) {
 
           <div
             className='
-  grid
-  grid-cols-5
-  gap-2
-  sm:gap-4
-  md:gap-6
-  lg:gap-10
-  w-full
-  max-w-4xl
-  mx-auto
-  px-3
+  grid grid-cols-5
+  gap-1 sm:gap-3 md:gap-6
+  w-full max-w-5xl
+  mx-auto px-2 sm:px-4
 '
           >
             {panes.map((image, index) => (
@@ -158,8 +153,7 @@ function Rating ({ onRatingSaved }) {
                 onClick={() => sendRating(index + 1)}
                 disabled={loading}
                 className='
-        w-full
-        min-w-0
+        w-full min-w-0
         cursor-pointer
         transition-transform duration-200 ease-in-out
         hover:scale-110
@@ -173,14 +167,14 @@ function Rating ({ onRatingSaved }) {
                   alt={`Calificación ${index + 1}`}
                   className='
           w-full
-          max-w-20
-          sm:max-w-28
-          md:max-w-36
-          lg:max-w-44
+          max-w-24
+          sm:max-w-32
+          md:max-w-40
+          lg:max-w-48
           mx-auto
           h-auto
           object-contain
-        '
+      '
                 />
               </button>
             ))}
@@ -195,11 +189,31 @@ function Rating ({ onRatingSaved }) {
             <img
               src={palomaImg}
               alt='Logo'
-              className='w-32 sm:w-40 md:w-48 lg:w-56 h-auto object-contain'
+              className=' w-full
+          max-w-20
+          sm:max-w-32
+          md:max-w-40
+          lg:max-w-48
+          mx-auto
+          h-auto
+          object-contain'
             />
           </div>
           <div className='mt-4'>
-            <h1 class='text-emerald-500 uppercase mb-4 text-4xl font-bold text-heading md:text-5xl lg:text-6xl'>
+            <h1
+              class='text-emerald-500 uppercase
+  font-bold
+  text-heading
+  text-2xl
+  sm:text-3xl
+  md:text-5xl
+  lg:text-6xl
+  mt-2
+  mb-8
+  text-center
+  text-balance
+  px-3'
+            >
               {message}
             </h1>
 
