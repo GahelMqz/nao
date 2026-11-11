@@ -48,7 +48,7 @@ function Rating ({ onRatingSaved }) {
         throw new Error(data.message)
       }
 
-      setMessage('¡Gracias por tu calificación!')
+      setMessage('¡Gracias!')
       onRatingSaved?.()
       // Iniciar cuenta regresiva de 5 segundos
       setCountdown(5)
@@ -100,7 +100,7 @@ function Rating ({ onRatingSaved }) {
             />
           </div>
 
-          <h1
+          <div
             className='
   text-amber-500
   uppercase
@@ -117,27 +117,9 @@ function Rating ({ onRatingSaved }) {
   px-3
 '
           >
-            Califica tu experiencia
-          </h1>
-
-          {/* <div className='flex justify-center gap-12'>
-            {panes.map((image, index) => (
-              <button
-                className='rounded cursor-pointer transition-transform duration-200 ease-in-out
-  hover:scale-105
-  active:scale-95'
-                key={index}
-                onClick={() => sendRating(index + 1)}
-                disabled={loading}
-              >
-                <img
-                  src={image}
-                  alt={`Calificación ${index + 1}`}
-                  className='w-32 sm:w-40 md:w-48 h-auto object-contain'
-                />
-              </button>
-            ))}
-          </div> */}
+            <h1>Califica</h1>
+            <h1>Tu experiencia</h1>
+          </div>
 
           <div
             className='
@@ -200,7 +182,7 @@ function Rating ({ onRatingSaved }) {
             />
           </div>
           <div className='mt-4'>
-            <h1
+            <div
               class='text-emerald-500 uppercase
   font-bold
   text-heading
@@ -214,8 +196,9 @@ function Rating ({ onRatingSaved }) {
   text-balance
   px-3'
             >
-              {message}
-            </h1>
+              <h1>{message}</h1>
+              <h1>Por tu calificación</h1>
+            </div>
 
             {/* Cuenta regresiva */}
             {countdown > 0 && (
