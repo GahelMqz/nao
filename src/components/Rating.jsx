@@ -89,29 +89,37 @@ function Rating ({ onRatingSaved }) {
             <img
               src={logoImg}
               alt='Logo'
-              className='w-32 sm:w-40 md:w-48 lg:w-56 h-auto object-contain'
+              className=' w-full
+          max-w-20
+          sm:max-w-32
+          md:max-w-40
+          lg:max-w-48
+          mx-auto
+          h-auto
+          object-contain'
             />
           </div>
 
-          <h1 class='text-amber-500 uppercase mb-4 text-4xl font-bold text-heading md:text-5xl lg:text-6xl'>
+          <h1
+            className='
+  text-amber-500
+  uppercase
+  font-bold
+  text-heading
+  text-2xl
+  sm:text-3xl
+  md:text-5xl
+  lg:text-6xl
+  mb-4
+  text-center
+  text-balance
+  px-3
+'
+          >
             Califica tu experiencia
           </h1>
-          <div className='flex justify-center gap-12'>
-            {/* {[1, 2, 3, 4, 5].map(score => (
-            <button
-              className='rounded cursor-pointer '
-              key={score}
-              onClick={() => sendRating(score)}
-              disabled={loading}
-            >
-              
-              <img
-                src={pan1Img}
-                alt='Botón'
-                className='w-32 sm:w-40 md:w-48 h-auto object-contain'
-              />
-            </button>
-          ))} */}
+
+          {/* <div className='flex justify-center gap-12'>
             {panes.map((image, index) => (
               <button
                 className='rounded cursor-pointer transition-transform duration-200 ease-in-out
@@ -125,6 +133,54 @@ function Rating ({ onRatingSaved }) {
                   src={image}
                   alt={`Calificación ${index + 1}`}
                   className='w-32 sm:w-40 md:w-48 h-auto object-contain'
+                />
+              </button>
+            ))}
+          </div> */}
+
+          <div
+            className='
+  grid
+  grid-cols-5
+  gap-2
+  sm:gap-4
+  md:gap-6
+  lg:gap-10
+  w-full
+  max-w-4xl
+  mx-auto
+  px-3
+'
+          >
+            {panes.map((image, index) => (
+              <button
+                key={index}
+                onClick={() => sendRating(index + 1)}
+                disabled={loading}
+                className='
+        w-full
+        min-w-0
+        cursor-pointer
+        transition-transform duration-200 ease-in-out
+        hover:scale-110
+        active:scale-95
+        disabled:opacity-50
+        disabled:cursor-not-allowed
+      '
+              >
+                <img
+                  src={image}
+                  alt={`Calificación ${index + 1}`}
+                  className='
+          w-full
+          max-w-20
+          sm:max-w-28
+          md:max-w-36
+          lg:max-w-44
+          mx-auto
+          h-auto
+          object-contain
+        '
                 />
               </button>
             ))}
