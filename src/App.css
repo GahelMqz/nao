@@ -1,1 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+
 @import "tailwindcss";
+
+* {
+  font-family: "Paytone One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p {
+  font-family: "Rye", serif;
+  font-weight: 400;
+  font-style: normal;
+}
