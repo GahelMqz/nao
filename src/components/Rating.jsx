@@ -21,16 +21,25 @@ function Rating ({ onRatingSaved }) {
       setLoading(true)
       setMessage('')
 
-      const response = await fetch('http://localhost:3000/api/ratings', {
-        method: 'POST',
+      // const response = await fetch('http://localhost:3000/api/ratings', {
+      //   method: 'POST',
 
+      //   headers: {
+      //     'Content-Type': 'application/json'
+      //   },
+
+      //   body: JSON.stringify({
+      //     score: score
+      //   })
+      // })
+      const API_URL = import.meta.env.VITE_API_URL
+
+      const response = await fetch(`${API_URL}/api/ratings`, {
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-
-        body: JSON.stringify({
-          score: score
-        })
+        body: JSON.stringify({ score })
       })
 
       const data = await response.json()
