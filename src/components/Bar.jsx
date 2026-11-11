@@ -47,11 +47,11 @@ function Bar () {
     font-medium
   ">
     <span className="text-red-300">
-      Muy insatisfecho
+      Puede mejorar
     </span>
 
     <span className="text-green-300">
-      Muy satisfecho
+      Excelente
     </span>
   </div>
 
