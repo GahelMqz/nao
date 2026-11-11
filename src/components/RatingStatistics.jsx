@@ -8,17 +8,15 @@ function RatingStatistics ({ refreshKey }) {
   const [error, setError] = useState('')
 
   // Consultar estadísticas al servidor
+
+  const API_URL = import.meta.env.VITE_API_URL
+
   const getRatings = useCallback(async () => {
     try {
       setLoading(true)
       setError('')
 
-      // const response = await fetch(
-      //     'http://localhost:3000/api/ratings/summary'
-      // );
-      const API_URL = import.meta.env.VITE_API_URL
-
-      fetch(`${API_URL}/api/ratings/summary`)
+      const response = await fetch(`${API_URL}/api/ratings/summary`)
 
       if (!response.ok) {
         throw new Error('Error al consultar las estadísticas')
